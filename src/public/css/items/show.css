@@ -1,0 +1,121 @@
+.item-detail {
+    display: flex;
+    gap: 60px;
+    padding: 40px;
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.item-detail__image img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.item-detail__info {
+    flex: 1;
+}
+
+.item-detail__name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.item-detail__brand {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.item-detail__price {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.item-detail__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.item-detail__icons span {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.item-detail__buy-btn {
+    background-color: #ff6666;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.item-detail__buy-btn:hover {
+    background-color: #e60000;
+}
+
+.item-detail__description,
+.item-detail__extra {
+    margin-bottom: 30px;
+}
+
+.item-detail__tag {
+    display: inline-block;
+    background-color: #eee;
+    padding: 4px 10px;
+    margin-right: 5px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.item-detail__comments h3 {
+    margin-bottom: 10px;
+}
+
+.comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.comment__user {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comment__content {
+    color: #333;
+    font-size: 14px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.item-detail__comment-btn {
+    margin-top: 10px;
+    background-color: #ff6666;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.item-detail__comment-btn:hover {
+    background-color: #e60000;
+}
