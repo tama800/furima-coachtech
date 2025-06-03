@@ -45,11 +45,31 @@
 }
 
 .category-tags .tag {
-    background: #ffeaea;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-size: 14px;
+    position: relative;
     cursor: pointer;
+}
+
+/* inputを非表示にする */
+.category-tags .tag input[type="radio"] {
+    display: none;
+}
+
+/* 通常状態のタグ */
+.category-tags .tag span {
+    display: inline-block;
+    border: 2px solid #ff5e5e;
+    color: #ff5e5e;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+/* 選択されたタグ（背景赤・文字白） */
+.category-tags .tag input[type="radio"]:checked+span {
+    background-color: #ff5e5e;
+    color: #fff;
 }
 
 .form__button {

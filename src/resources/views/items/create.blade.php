@@ -9,31 +9,30 @@
   <div class="item-form__heading">
     <h2>商品の出品</h2>
   </div>
-  <form class="form" action="/items" method="post" enctype="multipart/form-data">
+  <form class="form" action="/sell" method="post" enctype="multipart/form-data">
     @csrf
 
     {{-- 商品画像 --}}
     <div class="form__group">
-      <div class="form__group-title">商品画像</div>
+      <div class="form__group-title">画像を選択する</div>
       <div class="form__group-content">
         <input type="file" name="image">
       </div>
     </div>
 
     {{-- カテゴリー --}}
-    {{--
     <div class="form__group">
       <div class="form__group-title">カテゴリー</div>
       <div class="form__group-content category-tags">
         @foreach ($categories as $category)
           <label class="tag">
-            <input type="radio" name="category_id" value="{{ $category->id }}">
-            {{ $category->name }}
+            <input type="checkbox" name="category_ids[]" value="{{ $category->id }}">
+            <span>{{ $category->name }}</span>
           </label>
         @endforeach
       </div>
     </div>
-    --}}
+
     {{-- 商品の状態 --}}
     <div class="form__group">
       <div class="form__group-title">商品の状態</div>

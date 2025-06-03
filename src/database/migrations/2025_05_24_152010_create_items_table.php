@@ -19,10 +19,7 @@ class CreateItemsTable extends Migration
                   ->constrained('users')     // 外部キー users(id)
                   ->onDelete('cascade');     // ユーザー削除時に商品も削除
             $table->string('name', 255);         // 商品名
-            $table->string('brand', 255);        // ブランド名
-            $table->foreignId('category_id')
-                  ->constrained('categories')  // 外部キー categories(id)
-                  ->onDelete('restrict');      // カテゴリ削除禁止（任意）
+            $table->string('brand', 255)->nullable();       // ブランド名
             $table->unsignedBigInteger('condition')
                   ->comment('1:良好, 2:目立った傷や汚れなし, 3:やや傷や汚れあり, 4:状態が悪い');
             $table->text('description');            // 商品説明

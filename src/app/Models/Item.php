@@ -11,7 +11,6 @@ class Item extends Model
         'user_id',
         'name',
         'brand',
-        'category_id',
         'condition',
         'description',
         'image',
@@ -23,9 +22,10 @@ class Item extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Category::class, 'item_categories')
+        ->withTimestamps();
     }
 
     public static function getConditionLabels()
@@ -41,5 +41,10 @@ class Item extends Model
     public function getConditionLabelAttribute()
     {
         return self::getConditionLabels()[$this->condition] ?? '不明';
+    }
+
+    public function comments()
+    {
+    return $this->hasMany(Comment::class);
     }
 }

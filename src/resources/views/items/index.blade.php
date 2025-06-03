@@ -17,10 +17,14 @@
         @auth
           {{-- ログイン中：マイリスト表示 --}}
           @foreach ($items as $item)
+          <a href="/items/{{ $item->id }}" class="mypage__item-link">
             <div class="mypage__item-card">
-              <div class="mypage__item-image">商品画像</div>
+              <div class="mypage__item-image">
+                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
+              </div>
               <div class="mypage__item-name">{{ $item->name }}</div>
             </div>
+          </a>
           @endforeach
         @else
           {{-- ログインしてない：マイリストタブを開いた時のみ表示 --}}
@@ -30,10 +34,14 @@
     @else
       {{-- おすすめ表示（誰でも見れる） --}}
       @foreach ($items as $item)
+      <a href="/items/{{ $item->id }}" class="mypage__item-link">
         <div class="mypage__item-card">
-          <div class="mypage__item-image">商品画像</div>
+          <div class="mypage__item-image">
+            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
+        </div>
           <div class="mypage__item-name">{{ $item->name }}</div>
         </div>
+      </a>
       @endforeach
     @endif
   </div>

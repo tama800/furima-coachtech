@@ -7,7 +7,7 @@
 @section('content')
 <div class="item-detail">
   <div class="item-detail__image">
-    <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像">
+    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
   </div>
 
   <div class="item-detail__info">
@@ -20,7 +20,7 @@
         <span>☆ 3</span>
         <span>💬 1</span>
       </div>
-      <a href="#" class="item-detail__buy-btn">購入手続きへ</a>
+      <a href="/purchase/{{ $item->id }}" class="item-detail__buy-btn">購入手続きへ</a>
     </div>
 
     <div class="item-detail__description">
